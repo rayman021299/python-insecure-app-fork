@@ -50,3 +50,7 @@ repos:
     hooks:
       - id: bandit
         args: ["--exclude", ".venv,tests", "--quiet", "--recursive"]
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.2
+    hooks:
+      - id: gitleaks
