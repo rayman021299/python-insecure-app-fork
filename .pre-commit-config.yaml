@@ -1,5 +1,5 @@
 default_language_version:
-  python: python3.13
+  python: python
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: "v6.0.0"
@@ -54,3 +54,7 @@ repos:
     rev: v8.18.2
     hooks:
       - id: gitleaks
+
+# Intentionally added secret for Gitleaks testing:
+# AWS_ACCESS_KEY_ID: AKIAIOSFODNN7EXAMPLE
+# AWS_SECRET_ACCESS_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
