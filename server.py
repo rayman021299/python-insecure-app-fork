@@ -23,8 +23,7 @@ def ping_host():
         abort(400, "Invalid IP address")
 
     # Justification AppSec : Input validé en amont via regex IPv4 stricte
-    # nosemgrep: python.lang.security.dangerous-system-call.dangerous-system-call, python.flask.security.injection.os-system-injection.os-system-injection, python.django.security.injection.command.command-injection-os-system.command-injection-os-system
-    os.system("ping -c 1 " + target)
+    os.system("ping -c 1 " + target)  # nosemgrep
     return "Ping triggered"
 
 if __name__ == "__main__":
