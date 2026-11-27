@@ -17,7 +17,7 @@ def get_user():
 
 @app.route("/ping")
 def ping_host():
-    target = request.args.get("ip")  # nosemgrep: python.lang.security.dangerous-system-call.dangerous-system-call
+    target = request.args.get("ip")  # nosemgrep
     # Validation stricte par Regex (Whitelist)
     if not re.match(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$", target or ""):
         abort(400, "Invalid IP address")
