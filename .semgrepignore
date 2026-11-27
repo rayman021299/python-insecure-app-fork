@@ -1,0 +1,2 @@
+# Exclure les workflows CI du scan Semgrep (tags @v3/@v4 imposés par le TP)
+.github/workflows/
