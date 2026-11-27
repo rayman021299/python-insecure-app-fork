@@ -22,7 +22,8 @@ def ping_host():
     if not re.match(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$", target or ""):
         abort(400, "Invalid IP address")
 
-    # nosemgrep: python.lang.security.dangerous-system-call.dangerous-system-call, python.flask.security.injection.os-system-injection.os-system-injection, python.django.security.injection.command.command-injection-os-system.command-injection-os-system -- Justification AppSec : Input validé en amont via regex IPv4 stricte
+    # Justification AppSec : Input validé en amont via regex IPv4 stricte
+    # nosemgrep: python.lang.security.dangerous-system-call.dangerous-system-call, python.flask.security.injection.os-system-injection.os-system-injection, python.django.security.injection.command.command-injection-os-system.command-injection-os-system
     os.system("ping -c 1 " + target)
     return "Ping triggered"
 
